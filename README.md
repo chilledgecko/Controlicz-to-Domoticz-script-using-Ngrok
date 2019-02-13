@@ -1,5 +1,5 @@
 # Ngrok-to-Controlicz-script
-Script to update Controlicz with current local Ngrok URL
+Script to update Controlicz with current local Ngrok URL to allow access to the Domoticz web service without opening a web port on the local firewall.
 
 This script package is specific for a Domoticz (domoticz.com) home automation system 
 that is using Amazon Alexa or Google Home via controlicz.com for voice control.
@@ -22,6 +22,7 @@ Assumptions
  - ngrok is installed to  /opt/ngrok
  - contrtoliczUpdate.py is installed to /opt/controlicz
  - local account is your standard user account, sudo is not required 
+
 
 1.  ***** Install ngrok *****
 
@@ -48,6 +49,7 @@ keep the indenting;
     	proto: http
 
 
+
 2. ***** Run ngrok as a service *****
 
 Download the ngrok.service file and copy to /etc/systemd/system
@@ -65,6 +67,7 @@ ngrok will now always be running unless there is an issue.
 You can web browse to localhost:4040 to view the local ngrok web page to further confirm ngrok is running
 
 You can also browse to https://dashboard.ngrok.com/status to view your active tunnels
+
 
 
 3. ***** Configure controliczUpdate.py *****
@@ -99,6 +102,7 @@ localURL =              'http://localhost:4040/api/tunnels'		# Local ngrok webpa
 If you wish to have email notification of issues change emailOK = "true" and add the email details, gmail is preconfigured.
 
 You must make the script executable before it can run so execute chmod +x /opt/controlicz/controliczUpdate.py
+
 
 
 4. ***** Configure cron to run controliczUpdate.py *****
