@@ -10,6 +10,16 @@ to a named url from ngrok which controlicz then uses for access to Domoticz.
 Using ngrok prevents the requirement for a port to be opened inbound at the local firewall, enhancing security.
 However using the free use tier from ngrok the ngrok url changes each restart preventing a static address being used.
 
+Ngrok is run as a continually running system service which is monitored each time the Python script is run.
+
+Cron is used to run the Python script at preset intervals. Five minutes is the default but can be changed.
+
+The script is very low in resource requirements so will not have much impact. 
+
+The script will log on to the Controlicz.com web site using your controlicz details to update the url to allow controlicz to find your Domoticz instance as required to continue service between your voice commands and Domoticz.
+The ngrok url only changes if the service fails so the url should not change that often.
+
+There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
 
 Steps required
 
