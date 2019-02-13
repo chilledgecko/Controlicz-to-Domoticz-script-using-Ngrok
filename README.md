@@ -1,4 +1,4 @@
-# Ngrok-to-Controlicz-script
+# Controlicz-to-Domoticz-script-using Ngrok
 Script to update Controlicz with current local Ngrok URL to allow access to the Domoticz web service without opening a web port on the local firewall.
 
 This script package is specific for a Domoticz (domoticz.com) home automation system 
