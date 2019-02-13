@@ -80,6 +80,8 @@ There are a number of configurable options, only the Controlicz user details nee
 
 If you wish to make changes this is a list of what is available;
 
+
+
 logdirectory =          "/opt/controlicz/"			# location of this script
 logfile =               logdirectory + "controlicz.log"     	# all updates / issues will be seen here
 statusfile =            logdirectory + "status.log"         	# holds the current value of the ngrok url
