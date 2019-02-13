@@ -26,11 +26,17 @@ Assumptions
 1.  ***** Install ngrok *****
 
 Go to https://ngrok.com/ create an account and sign in
+
 Go to https://ngrok.com/download and download the ngrok client for your target machine
+
 unzip ngrok client to /opt/ngrok
+
 Go to https://dashboard.ngrok.com/auth and copy your Tunnel Authtoken
+
 On your local machine return to /opt/ngrok and run ./ngrok authtoken <YOUR_AUTH_TOKEN>
+
 Copy the created ngrok.yml to /opt/ngrok cp ~/.ngrok2/ngrok.yml /opt/ngrok
+
 Edit /opt/ngrok/ngrok.yml (nano /opt/ngrok/ngrok.yml) and add the following lines below the authtoken: xxxx line
 
 keep the indenting;
@@ -64,7 +70,9 @@ You can also browse to https://dashboard.ngrok.com/status to view your active tu
 3. ***** Configure controliczUpdate.py *****
 
 Download the controliczUpdate.py file and copy to /opt/controlicz
+
 There are a number of configurable options, only the Controlicz user details need to be changed for the script to work.
+
 If you wish to make changes this is a list of what is available;
 
 logdirectory =          "/opt/controlicz/"						        # location of this script
@@ -96,18 +104,26 @@ You must make the script executable before it can run so execute chmod +x /opt/c
 4. ***** Configure cron to run controliczUpdate.py *****
 
 Configure cron to run the script every 5 minutes (or whatever you require) 
+
 Run crontab -e
+
 At the bottom of the cron file add the following;
+
 */5 * * * * /opt/controlicz/controliczUpdate.py
 
 hit 'control o' to write out the updated file
+
 hit 'control x' to exit crontab -e
 
 
 Either let cron run the script or manually run /opt/controlicz/controliczUpdate.py
+
 You should see two new files in the /opt/controlicz directory controlicz.log and status.log
+
 View the files using nano controlicz.log and nano status.log respectively.
+
 controlicz.log should indicate that there was a new ngrok url and an update to controlicz has taken place.
+
 status.log should hold the latest ngrok url as well as the last state
 
 You can confirm the named ngrok url matches what is indicated on the local and ngrok web sites.
