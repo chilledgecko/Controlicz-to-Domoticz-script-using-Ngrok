@@ -12,14 +12,16 @@ However using the free use tier from ngrok the ngrok url changes each restart pr
 
 ## Operation
 Ngrok is run as a continually running system service which is monitored each time the Python script is run.
+The ngrok service is configured to restart on failure so should be stable.
 
 Cron is used to run the Python script at preset intervals. Five minutes is the default but can be changed.
 
 The script is very low in resource requirements so will not have much impact. 
 
-The script will monitor the availability of ngrok and obtain the current ngrok url. If the url has changed the script will log on to the Controlicz.com web site using your controlicz details and update the url to allow controlicz to find your Domoticz instance as required to continue service between your voice commands and Domoticz.
+The script will monitor the availability of ngrok and obtain the current ngrok url. 
+If the ngrok url has changed the script will log on to the controlicz.com web site using your controlicz details and update the registered ngrok url to allow controlicz to continue to connect to your Domoticz instance and continue service between your Alexa/Google voice commands and Domoticz.
 
-The ngrok url only changes if the service fails so the url should not change that often.
+The ngrok url only changes if the service fails so the url should not change. So once the ngrok url has been updated the script will just be running as a monitor.
 
 There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
 
