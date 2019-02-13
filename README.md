@@ -24,6 +24,7 @@ Assumptions
  - local account is your standard user account, sudo is not required 
 
 1.  ***** Install ngrok *****
+
 Go to https://ngrok.com/ create an account and sign in
 Go to https://ngrok.com/download and download the ngrok client for your target machine
 unzip ngrok client to /opt/ngrok
@@ -41,6 +42,7 @@ keep the indenting;
 
 
 2. ***** Run ngrok as a service *****
+
 Download the ngrok.service file and copy to /etc/systemd/system
 If ngrok is installed in /opt/ngrok no changes are required, if ngrok is installed elsewhere edit the path in ExecStart=
 Start the service  by running sudo systemctl start ngrok
@@ -53,6 +55,7 @@ You can also browse to https://dashboard.ngrok.com/status to view your active tu
 
 
 3. ***** Configure controliczUpdate.py *****
+
 Download the controliczUpdate.py file and copy to /opt/controlicz
 There are a number of configurable options, only the Controlicz user details need to be changed for the script to work.
 If you wish to make changes this is a list of what is available;
@@ -84,6 +87,7 @@ You must make the script executable before it can run so execute chmod +x /opt/c
 
 
 4. ***** Configure cron to run controliczUpdate.py *****
+
 Configure cron to run the script every 5 minutes (or whatever you require) 
 Run crontab -e
 At the bottom of the cron file add the following;
