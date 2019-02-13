@@ -27,8 +27,7 @@ Assumptions
 
 
 # Install ngrok
-  ***** Install ngrok *****
-
+ 
 Go to https://ngrok.com/ create an account and sign in
 
 Go to https://ngrok.com/download and download the ngrok client for your target machine
@@ -52,9 +51,8 @@ keep the indenting;
     	proto: http
 
 
-.
-.
-2 ***** Run ngrok as a service *****
+
+# Run ngrok as a service 
 
 Download the ngrok.service file and copy to /etc/systemd/system
 
@@ -73,9 +71,8 @@ You can web browse to localhost:4040 to view the local ngrok web page to further
 You can also browse to https://dashboard.ngrok.com/status to view your active tunnels
 
 
-.
-.
-3 ***** Configure controliczUpdate.py *****
+
+# Configure controliczUpdate.py 
 
 Download the controliczUpdate.py file and copy to /opt/controlicz
 
@@ -111,7 +108,7 @@ You must make the script executable before it can run so execute chmod +x /opt/c
 
 .
 .
-4 ***** Configure cron to run controliczUpdate.py *****
+# Configure cron to run controliczUpdate.py
 
 Configure cron to run the script every 5 minutes (or whatever you require) 
 
