@@ -26,7 +26,7 @@ Assumptions
 
 
 
-# Install ngrok
+## Install ngrok
  
 Go to https://ngrok.com/ create an account and sign in
 
@@ -52,7 +52,7 @@ keep the indenting;
 
 
 
-# Run ngrok as a service 
+## Run ngrok as a service 
 
 Download the ngrok.service file and copy to /etc/systemd/system
 
@@ -72,7 +72,7 @@ You can also browse to https://dashboard.ngrok.com/status to view your active tu
 
 
 
-# Configure controliczUpdate.py 
+## Configure controliczUpdate.py 
 
 Download the controliczUpdate.py file and copy to /opt/controlicz
 
@@ -108,7 +108,7 @@ You must make the script executable before it can run so execute chmod +x /opt/c
 
 .
 .
-# Configure cron to run controliczUpdate.py
+## Configure cron to run controliczUpdate.py
 
 Configure cron to run the script every 5 minutes (or whatever you require) 
 
@@ -121,6 +121,8 @@ At the bottom of the cron file add the following;
 hit 'control o' to write out the updated file
 
 hit 'control x' to exit crontab -e
+
+
 
 
 Either let cron run the script or manually run /opt/controlicz/controliczUpdate.py
