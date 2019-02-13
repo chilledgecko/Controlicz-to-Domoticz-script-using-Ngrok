@@ -17,7 +17,8 @@ Cron is used to run the Python script at preset intervals. Five minutes is the d
 
 The script is very low in resource requirements so will not have much impact. 
 
-The script will log on to the Controlicz.com web site using your controlicz details to update the url to allow controlicz to find your Domoticz instance as required to continue service between your voice commands and Domoticz.
+The script will monitor the availability of ngrok and obtain the current ngrok url. If the url has changed the script will log on to the Controlicz.com web site using your controlicz details and update the url to allow controlicz to find your Domoticz instance as required to continue service between your voice commands and Domoticz.
+
 The ngrok url only changes if the service fails so the url should not change that often.
 
 There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
