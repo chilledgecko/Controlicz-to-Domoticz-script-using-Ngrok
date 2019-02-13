@@ -36,11 +36,11 @@ unzip ngrok client to /opt/ngrok
 
 Go to https://dashboard.ngrok.com/auth and copy your Tunnel Authtoken
 
-On your local machine return to /opt/ngrok and run ./ngrok authtoken <YOUR_AUTH_TOKEN>
+On your local machine return to /opt/ngrok and run _./ngrok authtoken <YOUR_AUTH_TOKEN>_
 
-Copy the created ngrok.yml to /opt/ngrok cp ~/.ngrok2/ngrok.yml /opt/ngrok
+Copy the created ngrok.yml to /opt/ngrok _cp ~/.ngrok2/ngrok.yml /opt/ngrok_
 
-Edit /opt/ngrok/ngrok.yml (nano /opt/ngrok/ngrok.yml) and add the following lines below the authtoken: xxxx line
+Edit /opt/ngrok/ngrok.yml (_nano /opt/ngrok/ngrok.yml_) and add the following lines below the authtoken: xxxx line
 
 keep the indenting;
 
@@ -56,17 +56,17 @@ keep the indenting;
 
 Download the ngrok.service file and copy to /etc/systemd/system
 
-If ngrok is installed in /opt/ngrok no changes are required, if ngrok is installed elsewhere edit the path in ExecStart=
+If ngrok is installed in /opt/ngrok no changes are required, if ngrok is installed elsewhere edit the path in **ExecStart=**
 
-Start the service  by running sudo systemctl start ngrok
+Start the service  by running _sudo systemctl start ngrok_
 
-Check it is running ok by running sudo systemctl status ngrok
+Check it is running ok by running _sudo systemctl status ngrok_
 
-Enable ngrok service for automatic startup by running sudo systemctl enable ngrok
+Enable ngrok service for automatic startup by running _sudo systemctl enable ngrok_
 
 ngrok will now always be running unless there is an issue.
 
-You can web browse to localhost:4040 to view the local ngrok web page to further confirm ngrok is running
+You can web browse to http://localhost:4040 to view the local ngrok web page to further confirm ngrok is running
 
 You can also browse to https://dashboard.ngrok.com/status to view your active tunnels
 
@@ -103,7 +103,7 @@ ControliczURL =         "https://controlicz.com/hostname"	# Only change if requi
 #ngrok local URL\
 localURL =              'http://localhost:4040/api/tunnels'	# Local ngrok webpage, used to check availability\
  \
-If you wish to have email notification of issues change emailOK = "true" and add the email details, gmail is preconfigured.
+If you wish to have email notification of issues change **emailOK = "true"** and add the email details, gmail is preconfigured.
 
 You must make the script executable before it can run so execute chmod +x /opt/controlicz/controliczUpdate.py
 
@@ -113,11 +113,11 @@ You must make the script executable before it can run so execute chmod +x /opt/c
 
 Configure cron to run the script every 5 minutes (or whatever you require) 
 
-Run crontab -e
+Run _crontab -e_
 
 At the bottom of the cron file add the following;
 
-*/5 * * * * /opt/controlicz/controliczUpdate.py
+***/5 * * * * /opt/controlicz/controliczUpdate.py**
 
 hit 'control o' to write out the updated file
 
@@ -126,11 +126,11 @@ hit 'control x' to exit crontab -e
 
 
 
-Either let cron run the script or manually run /opt/controlicz/controliczUpdate.py
+Either let cron run the script or manually run _/opt/controlicz/controliczUpdate.py_
 
 You should see two new files in the /opt/controlicz directory controlicz.log and status.log
 
-View the files using nano controlicz.log and nano status.log respectively.
+View the files using _nano controlicz.log_ and _nano status.log_ respectively.
 
 controlicz.log should indicate that there was a new ngrok url and an update to controlicz has taken place.
 
