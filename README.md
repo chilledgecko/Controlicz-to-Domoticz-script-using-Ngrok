@@ -81,7 +81,7 @@ There are a number of configurable options, only the Controlicz user details nee
 If you wish to make changes this is a list of what is available;
 
 
-
+'
 logdirectory =          "/opt/controlicz/"			# location of this script\
 logfile =               logdirectory + "controlicz.log"     	# all updates / issues will be seen here\
 statusfile =            logdirectory + "status.log"         	# holds the current value of the ngrok url\
@@ -102,7 +102,7 @@ ControliczURL =         "https://controlicz.com/hostname"	# Only change if requi
 
 #ngrok local URL\
 localURL =              'http://localhost:4040/api/tunnels'	# Local ngrok webpage, used to check availability\
- \
+ \'
 If you wish to have email notification of issues change **emailOK = "true"** and add the email details, gmail is preconfigured.
 
 You must make the script executable before it can run so execute   **chmod +x /opt/controlicz/controliczUpdate.py**
