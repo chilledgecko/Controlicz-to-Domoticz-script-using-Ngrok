@@ -45,13 +45,19 @@ keep the indenting;
 2. ***** Run ngrok as a service *****
 
 Download the ngrok.service file and copy to /etc/systemd/system
+
 If ngrok is installed in /opt/ngrok no changes are required, if ngrok is installed elsewhere edit the path in ExecStart=
+
 Start the service  by running sudo systemctl start ngrok
+
 Check it is running ok by running sudo systemctl status ngrok
+
 Enable ngrok service for automatic startup by running sudo systemctl enable ngrok
+
 ngrok will now always be running unless there is an issue.
 
 You can web browse to localhost:4040 to view the local ngrok web page to further confirm ngrok is running
+
 You can also browse to https://dashboard.ngrok.com/status to view your active tunnels
 
 
