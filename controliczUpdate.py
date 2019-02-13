@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-# ngrok should be running as a service
-# https://github.com/vincenthsu/systemd-ngrok
-# for instructions and configuration
+#
 #
 # Run this script as a cron job (example is every 5 mins)
 # crontab -e 
