@@ -24,8 +24,8 @@ Assumptions
  - local account is your standard user account, sudo is not required 
  
 
-
-
+.
+.
 1  ***** Install ngrok *****
 
 Go to https://ngrok.com/ create an account and sign in
@@ -51,7 +51,8 @@ keep the indenting;
     	proto: http
 
 
-
+.
+.
 2 ***** Run ngrok as a service *****
 
 Download the ngrok.service file and copy to /etc/systemd/system
@@ -71,7 +72,8 @@ You can web browse to localhost:4040 to view the local ngrok web page to further
 You can also browse to https://dashboard.ngrok.com/status to view your active tunnels
 
 
-
+.
+.
 3 ***** Configure controliczUpdate.py *****
 
 Download the controliczUpdate.py file and copy to /opt/controlicz
@@ -106,7 +108,8 @@ If you wish to have email notification of issues change emailOK = "true" and add
 You must make the script executable before it can run so execute chmod +x /opt/controlicz/controliczUpdate.py
 
 
-
+.
+.
 4 ***** Configure cron to run controliczUpdate.py *****
 
 Configure cron to run the script every 5 minutes (or whatever you require) 
