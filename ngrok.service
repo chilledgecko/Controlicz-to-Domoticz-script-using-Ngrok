@@ -1,0 +1,14 @@
+[Unit]
+Description=ngrok (https://ngrok.com) (https://github.com/chilledgecko/Ngrok-to-Controlicz-script)
+Requires=Network.target
+After=Network.target syslog.target
+
+[Service]
+Type=simple
+ExecStart=/opt/ngrok/ngrok start --all --config /opt/ngrok/ngrok.yml
+ExecStop=/usr/bin/killall ngrok
+Restart=always
+RestartSec=1min
+
+[Install]
+WantedBy=multi-user.target
