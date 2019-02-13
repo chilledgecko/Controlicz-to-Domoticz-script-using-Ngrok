@@ -80,26 +80,26 @@ There are a number of configurable options, only the Controlicz user details nee
 
 If you wish to make changes this is a list of what is available;
 
-logdirectory =          "/opt/controlicz/"						        # location of this script
+logdirectory =          "/opt/controlicz/"			# location of this script
 logfile =               logdirectory + "controlicz.log"     	# all updates / issues will be seen here
 statusfile =            logdirectory + "status.log"         	# holds the current value of the ngrok url
 
 #Email Details
 emailOK =               "false"                              	# set false if no email notification required, 
-                                                              # and true if notification is required
-mailServer =            "smtp.gmail.com"						          # Mail server address
-mailServerPort =        "587"									                # Mail Server Port
-fromEmail =             "someValidEmail@gmail.com"				    # Sending email address
-fromEmailPwd =          "someValidEmailPassword"				      # Sending email password
-toEmail =               "LetMeKnow@gmail.com"					        # Recipient email address
+                                                                # and true if notification is required
+mailServer =            "smtp.gmail.com"			# Mail server address
+mailServerPort =        "587"					# Mail Server Port
+fromEmail =             "someValidEmail@gmail.com"		# Sending email address
+fromEmailPwd =          "someValidEmailPassword"		# Sending email password
+toEmail =               "LetMeKnow@gmail.com"			# Recipient email address
 
 #Controlicz Details
-Controlicz_username =   "ControliczUserName"					        # Controlicz Username  			*** Needs valid user name
-Controlicz_pwd =        "ControliczPassword"					        # Controlicz Password  			*** Needs valid password
-ControliczURL =         "https://controlicz.com/hostname"		  # Only change if required by Controlicz
+Controlicz_username =   "ControliczUserName"			# Controlicz Username	*** Needs valid user name
+Controlicz_pwd =        "ControliczPassword"			# Controlicz Password	*** Needs valid password
+ControliczURL =         "https://controlicz.com/hostname"	# Only change if required by Controlicz
 
 #ngrok local URL
-localURL =              'http://localhost:4040/api/tunnels'		# Local ngrok webpage, used to check availability
+localURL =              'http://localhost:4040/api/tunnels'	# Local ngrok webpage, used to check availability
 
 If you wish to have email notification of issues change emailOK = "true" and add the email details, gmail is preconfigured.
 
