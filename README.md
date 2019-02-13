@@ -22,8 +22,7 @@ Assumptions
  - ngrok is installed to  /opt/ngrok
  - contrtoliczUpdate.py is installed to /opt/controlicz
  - local account is your standard user account, sudo is not required 
-
-
+ 
 
 
 
