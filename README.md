@@ -36,11 +36,11 @@ unzip ngrok client to /opt/ngrok
 
 Go to https://dashboard.ngrok.com/auth and copy your Tunnel Authtoken
 
-On your local machine return to /opt/ngrok and run **./ngrok authtoken <YOUR_AUTH_TOKEN>**
+On your local machine return to /opt/ngrok and run   **./ngrok authtoken <YOUR_AUTH_TOKEN>**
 
-Copy the created ngrok.yml to /opt/ngrok **cp ~/.ngrok2/ngrok.yml /opt/ngrok_**
+Copy the created ngrok.yml to /opt/ngrok   **cp ~/.ngrok2/ngrok.yml /opt/ngrok**
 
-Edit /opt/ngrok/ngrok.yml **nano /opt/ngrok/ngrok.yml** and add the following lines below the **authtoken: xxxx** line
+Edit /opt/ngrok/ngrok.yml   **nano /opt/ngrok/ngrok.yml** and add the following lines below the   **authtoken: xxxx** line
 
 keep the indenting;
 
@@ -58,11 +58,11 @@ Download the ngrok.service file and copy to /etc/systemd/system
 
 If ngrok is installed in /opt/ngrok no changes are required, if ngrok is installed elsewhere edit the path in **ExecStart=**
 
-Start the service  by running **sudo systemctl start ngrok**
+Start the service  by running   **sudo systemctl start ngrok**
 
-Check it is running ok by running **sudo systemctl status ngrok**
+Check it is running ok by running   **sudo systemctl status ngrok**
 
-Enable ngrok service for automatic startup by running **sudo systemctl enable ngrok**
+Enable ngrok service for automatic startup by running   **sudo systemctl enable ngrok**
 
 ngrok will now always be running unless there is an issue.
 
@@ -105,7 +105,7 @@ localURL =              'http://localhost:4040/api/tunnels'	# Local ngrok webpag
  \
 If you wish to have email notification of issues change **emailOK = "true"** and add the email details, gmail is preconfigured.
 
-You must make the script executable before it can run so execute **chmod +x /opt/controlicz/controliczUpdate.py**
+You must make the script executable before it can run so execute   **chmod +x /opt/controlicz/controliczUpdate.py**
 
 
 ---
@@ -113,7 +113,7 @@ You must make the script executable before it can run so execute **chmod +x /opt
 
 Configure cron to run the script every 5 minutes (or whatever you require) 
 
-Run **crontab -e**
+Run   **crontab -e**
 
 At the bottom of the cron file add the following;
 
@@ -126,11 +126,11 @@ hit 'control x' to exit crontab -e
 
 
 
-Either let cron run the script or manually run **/opt/controlicz/controliczUpdate.py**
+Either let cron run the script or manually run   **/opt/controlicz/controliczUpdate.py**
 
 You should see two new files in the /opt/controlicz directory controlicz.log and status.log
 
-View the files using **nano controlicz.log** and **nano status.log** respectively.
+View the files using   **nano controlicz.log** and   **nano status.log** respectively.
 
 controlicz.log should indicate that there was a new ngrok url and an update to controlicz has taken place.
 
