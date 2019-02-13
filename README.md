@@ -82,14 +82,14 @@ If you wish to make changes this is a list of what is available;
 
 
 
-logdirectory =          "/opt/controlicz/"			# location of this script
-logfile =               logdirectory + "controlicz.log"     	# all updates / issues will be seen here
-statusfile =            logdirectory + "status.log"         	# holds the current value of the ngrok url
+logdirectory =          "/opt/controlicz/"			# location of this script\
+logfile =               logdirectory + "controlicz.log"     	# all updates / issues will be seen here\
+statusfile =            logdirectory + "status.log"         	# holds the current value of the ngrok url\
 
-#Email Details
-emailOK =               "false"                              	# set false if no email notification required, 
-                                                                # and true if notification is required
-mailServer =            "smtp.gmail.com"			# Mail server address
+#Email Details\
+emailOK =               "false"                              	# set false if no email notification required, \
+                                                                # and true if notification is required\
+mailServer =            "smtp.gmail.com"			# Mail server address\
 mailServerPort =        "587"					# Mail Server Port
 fromEmail =             "someValidEmail@gmail.com"		# Sending email address
 fromEmailPwd =          "someValidEmailPassword"		# Sending email password
