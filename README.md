@@ -10,6 +10,7 @@ to a named url from ngrok which controlicz then uses for access to Domoticz.
 Using ngrok prevents the requirement for a port to be opened inbound at the local firewall, enhancing security.
 However using the free use tier from ngrok the ngrok url changes each restart preventing a static address being used.
 
+## Operation
 Ngrok is run as a continually running system service which is monitored each time the Python script is run.
 
 Cron is used to run the Python script at preset intervals. Five minutes is the default but can be changed.
@@ -21,14 +22,14 @@ The ngrok url only changes if the service fails so the url should not change tha
 
 There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
 
-Steps required
+## Steps required
 
 1. Install ngrok
 2. Run ngrok as a service
 3. Configure controliczUpdate.py
 4. Configure cron to run controliczUpdate.py
 
-Assumptions
+## Assumptions
  - ngrok is installed to  /opt/ngrok
  - controliczUpdate.py is installed to /opt/controlicz
  - local account is your standard user account, elevated privileges are not required except when setting up the ngrok service, at which point sudo is used.  
