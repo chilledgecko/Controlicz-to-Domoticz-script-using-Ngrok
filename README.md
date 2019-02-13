@@ -32,6 +32,7 @@ Go to https://dashboard.ngrok.com/auth and copy your Tunnel Authtoken
 On your local machine return to /opt/ngrok and run ./ngrok authtoken <YOUR_AUTH_TOKEN>
 Copy the created ngrok.yml to /opt/ngrok cp ~/.ngrok2/ngrok.yml /opt/ngrok
 Edit /opt/ngrok/ngrok.yml (nano /opt/ngrok/ngrok.yml) and add the following lines below the authtoken: xxxx line
+
 keep the indenting;
 
 	web_addr: 0.0.0.0:4040
