@@ -1,14 +1,18 @@
 # Controlicz to Domoticz script using Ngrok
-Script to update Controlicz with current local Ngrok URL to allow access to the Domoticz web service without opening a web port on the local firewall.
 
-This script package is specific for a Domoticz (domoticz.com) home automation system 
-that is using Amazon Alexa or Google Home via controlicz.com for voice control.
+Definitions
+Domoticz - a home automation software application (www.domoticz.com)
+Controlicz - a cloud based service to connect Amazon Alexa or Google Home to Domoticz (www.controlicz.com)
+Ngrok - a cloud based tunneling service that connects a local PC with a named URL. (www.ngrok.com)
 
-It is using ngrok (ngrok.com) to run a tunnel from the Domoticz web service on the local machine 
-to a named url from ngrok which controlicz then uses for access to Domoticz.
+In order for Controlicz to connect to the user local instance of Domoticz a port needs to be opened at the local firewall to allow a connection from Conrtolicz to the Domoticz web front end.
+This requires both the open port as well as a DDNS type url to be configured to map the local IP address to a named URL that Controlicz can use.
+The use of ngrok negates both the port opening and the requirement for a dynamic DNS service, enhancing security by reducing the public IP footprint and so reducing the risk from random port scans.
+However, if the ngrok url is guessed then the access is again available. Don't be too complacent.
+The random ngrok url is in the format of **<four octets>.ngrok.io** e.g. https://86017ff7.ngrok.io 
 
-Using ngrok prevents the requirement for a port to be opened inbound at the local firewall, enhancing security.
-However using the free use tier from ngrok the ngrok url changes each restart preventing a static address being used.
+This script and associated ngrok local service automates the monitoring of ngrok for availability and updating of the current ngrok tunnel url as and when it changes.
+
 
 ## Operation
 Ngrok is run as a continually running system service which is monitored each time the Python script is run.
@@ -21,7 +25,7 @@ The script is very low in resource requirements so will not have much impact.
 The script will monitor the availability of ngrok and obtain the current ngrok url. 
 If the ngrok url has changed the script will log on to the controlicz.com web site using your controlicz details and update the registered ngrok url to allow controlicz to continue to connect to your Domoticz instance and continue service between your Alexa/Google voice commands and Domoticz.
 
-The ngrok url only changes if the service fails so the url should not change. So once the ngrok url has been updated the script will just be running as a monitor.
+The ngrok url only changes if the service fails/stops so the url should not change that often. Only a local machine reboot or a ngrok cloud services reset are expected to cause a change of url. So once the ngrok url has been updated the script should just be running as a monitor.
 
 There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
 
@@ -35,16 +39,16 @@ There is a configurable option to send an email if an error situation is encount
 4. Configure cron to run controliczUpdate.py
 
 ## Assumptions
- - ngrok is installed to  /opt/ngrok
- - controliczUpdate.py is installed to /opt/controlicz
- - local account is your standard user account, elevated privileges are not required except when setting up the ngrok service, at which point sudo is used.  
+ - ngrok is installed to  **/opt/ngrok**
+ - controliczUpdate.py is installed to **/opt/controlicz**
+ - local installation account is your standard user account, elevated privileges are not required except when setting up the ngrok service, at which point sudo is used.  
  
 ---
 ---
 
 ## Install ngrok
  
-Go to https://ngrok.com/ create an account and sign in
+Go to https://ngrok.com/ create a free account and sign in
 
 Go to https://ngrok.com/download and download the ngrok client for your target machine
 
@@ -60,11 +64,12 @@ Edit /opt/ngrok/ngrok.yml   **nano /opt/ngrok/ngrok.yml** and add the following 
 
 keep the indenting;
 
-	web_addr: 0.0.0.0:4040
-	tunnels:
-  		domoticz-http:
-    	addr: 8080
-    	proto: http
+region: eu
+web_addr: 0.0.0.0:4040
+  tunnels:
+    domoticz-http:
+      addr: 8080
+      proto: http
 
 
 ---
