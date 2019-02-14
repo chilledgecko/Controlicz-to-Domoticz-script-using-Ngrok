@@ -40,6 +40,7 @@ The ngrok url only changes if the service fails/stops so the url should not chan
 
 There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
 
+## Diagram
 ![Basic operation](https://github.com/chilledgecko/Controlicz-to-Domoticz-script-using-Ngrok/blob/master/controliczDomoticz.png)
 
 ## Steps required
