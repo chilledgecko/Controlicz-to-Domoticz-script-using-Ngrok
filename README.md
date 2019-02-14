@@ -31,7 +31,7 @@ The ngrok service is configured to restart on failure so should be stable.
 
 Cron is used to run the Python script at preset intervals. Five minutes is the default but can be changed.
 
-The script is very low in resource requirements so will not have much impact. 
+The script is very low in resource requirements so will not have much impact on the local machine. 
 
 The script will monitor the availability of ngrok and obtain the current ngrok url. 
 If the ngrok url has changed the script will log on to the controlicz.com web site using your controlicz details and update the registered ngrok url to allow controlicz to continue to connect to your Domoticz instance and continue service between your Alexa/Google voice commands and Domoticz.
