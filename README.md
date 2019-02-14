@@ -13,7 +13,7 @@ In order for Controlicz to connect to the user local instance of Domoticz a port
 This requires both the open port as well as a DDNS type url to be configured to map the local IP address to a named URL that Controlicz can use.
 The use of ngrok negates both the port opening and the requirement for a dynamic DNS service, enhancing security by reducing the public IP footprint and so reducing the risk from random port scans.
 However, if the ngrok url is guessed then the access is again available. Don't be too complacent.
-The random ngrok url is in the format of **<four octets>.ngrok.io** e.g. https://86017ff7.ngrok.io 
+The random ngrok url is in the format of **{four octets}.ngrok.io** e.g. https://86017ff7.ngrok.io 
 
 This script and associated ngrok local service automates the monitoring of ngrok for availability and updating of the current ngrok tunnel url as and when it changes.
 
