@@ -108,6 +108,12 @@ You can also browse to https://dashboard.ngrok.com/status to view your active tu
 
 Download the controliczUpdate.py file and copy to /opt/controlicz
 
+The script has a number of module dependencies, namely - requests, json, time & smtplib.
+
+These can be installed using ***pip3 install requests*** or whatever is missing.
+
+Note, the script expects Python 3 which should already be available, if not it will need to be installed.
+
 There are a number of configurable options, only the Controlicz user details need to be changed for the script to work.
 
 If you wish to make changes this is a list of what is available;
