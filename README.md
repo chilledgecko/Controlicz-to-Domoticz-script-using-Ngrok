@@ -1,6 +1,6 @@
 # Controlicz to Domoticz script using Ngrok
 
-Definitions
+## Definitions and Description
 
 **Domoticz** - a home automation software application (www.domoticz.com)
 
