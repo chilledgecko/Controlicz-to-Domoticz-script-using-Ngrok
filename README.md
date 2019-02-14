@@ -1,9 +1,13 @@
 # Controlicz to Domoticz script using Ngrok
 
 Definitions
+
 Domoticz - a home automation software application (www.domoticz.com)
+
 Controlicz - a cloud based service to connect Amazon Alexa or Google Home to Domoticz (www.controlicz.com)
+
 Ngrok - a cloud based tunneling service that connects a local PC with a named URL. (www.ngrok.com)
+
 
 In order for Controlicz to connect to the user local instance of Domoticz a port needs to be opened at the local firewall to allow a connection from Conrtolicz to the Domoticz web front end.
 This requires both the open port as well as a DDNS type url to be configured to map the local IP address to a named URL that Controlicz can use.
@@ -63,14 +67,14 @@ Copy the created ngrok.yml to /opt/ngrok   **cp ~/.ngrok2/ngrok.yml /opt/ngrok**
 Edit /opt/ngrok/ngrok.yml   **nano /opt/ngrok/ngrok.yml** and add the following lines below the   **authtoken: xxxx** line
 
 keep the indenting;
-
+```
 region: eu
 web_addr: 0.0.0.0:4040
   tunnels:
     domoticz-http:
       addr: 8080
       proto: http
-
+```
 
 ---
 ## Run ngrok as a service 
