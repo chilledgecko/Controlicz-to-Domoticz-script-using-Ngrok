@@ -25,7 +25,7 @@ The ngrok url only changes if the service fails so the url should not change. So
 
 There is a configurable option to send an email if an error situation is encountered to allow you to investigate ASAP.
 
-![Basic operation](https://octodex.github.com/images/yaktocat.png)
+![Basic operation](https://github.com/chilledgecko/Controlicz-to-Domoticz-script-using-Ngrok/controliczDomoticz.png)
 
 ## Steps required
 
