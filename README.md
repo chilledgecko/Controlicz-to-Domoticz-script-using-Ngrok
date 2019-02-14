@@ -2,18 +2,25 @@
 
 Definitions
 
-Domoticz - a home automation software application (www.domoticz.com)
+**Domoticz** - a home automation software application (www.domoticz.com)
 
-Controlicz - a cloud based service to connect Amazon Alexa or Google Home to Domoticz (www.controlicz.com)
+**Controlicz** - a cloud based service to connect Amazon Alexa or Google Home to Domoticz (www.controlicz.com)
 
-Ngrok - a cloud based tunneling service that connects a local PC with a named URL. (www.ngrok.com)
+**Ngrok** - a cloud based tunneling service that connects a local PC with a named URL. (www.ngrok.com)
 
 
 In order for Controlicz to connect to the user local instance of Domoticz a port needs to be opened at the local firewall to allow a connection from Conrtolicz to the Domoticz web front end.
+
 This requires both the open port as well as a DDNS type url to be configured to map the local IP address to a named URL that Controlicz can use.
+
+
 The use of ngrok negates both the port opening and the requirement for a dynamic DNS service, enhancing security by reducing the public IP footprint and so reducing the risk from random port scans.
+
+
 However, if the ngrok url is guessed then the access is again available. Don't be too complacent.
-The random ngrok url is in the format of **{four octets}.ngrok.io** e.g. https://86017ff7.ngrok.io 
+
+The random ngrok url is in the format of **{four octets}.ngrok.io**   e.g. https://86017ff7.ngrok.io 
+
 
 This script and associated ngrok local service automates the monitoring of ngrok for availability and updating of the current ngrok tunnel url as and when it changes.
 
@@ -159,7 +166,21 @@ View the files using   **nano controlicz.log** and   **nano status.log** respect
 
 controlicz.log should indicate that there was a new ngrok url and an update to controlicz has taken place.
 
+e.g.
+```
+14-Feb-2019 11:25:02   Old URL https://86017ff6.ngrok.io does not match latest URL https://2edfd8a4.ngrok.io an update is needed
+14-Feb-2019 11:25:02   Attempting to update controlicz URL to https://2edfd8a4.ngrok.io
+14-Feb-2019 11:25:02   Controlicz status response = Code[200] Text - 'hostname changed'
+14-Feb-2019 11:25:02   URL https://2edfd8a4.ngrok.io has been updated at Controlicz.
+```
+
 status.log should hold the latest ngrok url as well as the last state
+
+e.g.
+```
+https://2edfd8a4.ngrok.io
+true
+```
 
 You can confirm the named ngrok url matches what is indicated on the local and ngrok web sites.
 
