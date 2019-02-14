@@ -50,6 +50,7 @@ There is a configurable option to send an email if an error situation is encount
 4. Configure cron to run controliczUpdate.py
 
 ## Assumptions
+ - The PC is running a Linux derivative, this has not been tested on Windows.
  - ngrok is installed to  **/opt/ngrok**
  - controliczUpdate.py is installed to **/opt/controlicz**
  - local installation account is your standard user account, elevated privileges are not required except when setting up the ngrok service, at which point sudo is used.  
